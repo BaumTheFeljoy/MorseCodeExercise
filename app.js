@@ -90,32 +90,6 @@ function decodeMorseWord(morseWord) {
     return word + SINGLE_SPACE
 }
 
-function transformPavelsCode(code) {
-    let transformed = code.replace(/\/{2}/g, DOUBLE_SPACE)
-    transformed = transformed.replace(/\/{1}/g, SINGLE_SPACE)
-    console.log(transformed)
-    return transformed
-}
-
-function transformAlexCode(code) {
-    let transformed = code.replace(/\s{7}/g, "A")
-    transformed = transformed.replace(/\s{3}/g, "Z")
-    transformed = transformed.replace(/\s{1}/g, EMPTY_STRING)
-
-    transformed = transformed.replace(/A+/g, DOUBLE_SPACE)
-    transformed = transformed.replace(/Z+/g, SINGLE_SPACE)
-
-    console.log(transformed)
-    return transformed
-}
-
-function transformAhmedCode(code) {
-    let transformed = code.replace(/\/{1}/g, DOUBLE_SPACE)
-
-    console.log(transformed)
-    return transformed
-}
-
 function normalizeMorseCode(code, letterSpacingRegEx, wordSpacingRegEx) {
     let transformed = code.replace(wordSpacingRegEx, "A")
     transformed = transformed.replace(letterSpacingRegEx, "Z")
